@@ -17,7 +17,7 @@ class Library
   def borrowed_books
     @books.each do |book|
       if book.status == "unavailable"
-        puts "#{book.title} has been checked out by ________"
+        puts "#{book.title} has been checked out by #{book.borrower.name}."
       end
     end
   end

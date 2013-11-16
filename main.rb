@@ -35,12 +35,12 @@ puts "-------------------------"
 puts "check out two books for mike"
 library.check_out(mike, stranger)
 library.check_out(mike, nausea)
-puts "-------------------------"
+puts "Mike checked out The Stranger and Nausea."
 
 puts "check out two books for gilbert"
 library.check_out(gilbert, karamazov)
 library.check_out(gilbert, feynman)
-puts "-------------------------"
+puts "Gilbert checked out The Brothers Karamozov and Surely You're Joking Mr. Feynman."
 
 puts "list all five books in the library's catalog with their statuses:"
 library.list_books
