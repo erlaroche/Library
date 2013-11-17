@@ -35,29 +35,34 @@ puts "-------------------------"
 puts "check out two books for mike"
 library.check_out(mike, stranger)
 library.check_out(mike, nausea)
-puts "Mike checked out The Stranger and Nausea."
+puts "Mike checked out The Stranger and Nausea. \
+___________________________________"
 
 puts "check out two books for gilbert"
 library.check_out(gilbert, karamazov)
 library.check_out(gilbert, feynman)
-puts "Gilbert checked out The Brothers Karamozov and Surely You're Joking Mr. Feynman."
+puts "Gilbert checked out The Brothers Karamozov and Surely \
+ You're Joking Mr. Feynman. \
+ __________________________________"
 
 puts "list all five books in the library's catalog with their statuses:"
 library.list_books
-puts "-------------------------"
+puts "--------------------------------------------------"
 
 puts "try to check out another book for Mike, this should fail since he already
   has two out"
 library.check_out(mike, finnegan)
-puts "-------------------------"
+puts "---------------------------------------------------"
 
 puts "this book should still be available since it failed before"
 library.check_out(ricardo, finnegan)
-puts "-------------------------"
+puts "Ricardo checks out Finnegans Wake \
+-----------------------------------------------------------"
 
 puts "but this book should fail since it is already checked out"
 library.check_out(ricardo, stranger)
-puts "-------------------------"
+puts "The Stranger is already checked out \
+--------------------------------------------------------------"
 
 puts "these should return the books each user checked out"
 puts ''

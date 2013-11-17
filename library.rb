@@ -3,75 +3,65 @@ class Library
     @books = []
   end
 
-  def books
-    @books
-  end
-
   def list_books
-    @books.each do |bk| 
-      puts "These are the book titles: #{bk.title} and their status is #{bk.status}."
+    puts "These are the book titles:" 
+    @books.each do |single_book| 
+      puts "#{single_book.title} and its status is #{single_book.status}."
     end
   end
 
 
   def borrowed_books
-    @books.each do |book|
-      if book.status == "unavailable"
-        puts "#{book.title} has been checked out by #{book.borrower.name}."
+    @books.each do |single_book|
+      if single_book.status == "unavailable"
+        puts "#{single_book.title} has been checked out by #{single_book.borrower.name}."
       end
     end
   end
 
   def available_books
-    @books.each do |book|
-      if book.status == "available"
-        puts "#{book.title} to the Library!"
+    @books.each do |single_book|
+      if single_book.status == "available"
+        puts "#{single_book.title} to the Library!"
       end
     end
   end
 
-  def add_book(book)
-    @books << book
-    puts "You added #{book.title} to the library!"
+  def add_book(single_book)
+    @books << single_book
+    puts "You added #{single_book.title} to the library!"
   end
 
-  def check_out(user, book)
+  def check_out(user, single_book)
     if user.borrowed_books.length >= 2
       puts "Sorry, you are at your max number of books (2)."
       return
     end
     
     if 
-      book.status == "available"
-      user.borrowed_books << book
-      book.status = "unavailable"
-      book.borrower = user
+      single_book.status == "available"
+      user.borrowed_books << single_book
+      single_book.status = "unavailable"
+      single_book.borrower = user
 
       else 
-        book.status == "unavailable"
-        puts "Sorry, #{book.title} has been checked-out by #{user.name}. "
+        single_book.status == "unavailable"
+        puts "Sorry, #{single_book.title} has been checked-out \
+        by #{user.name}. "
     end
   end
 
-  def check_in(book)
-    @book = book
+  def check_in(single_book)
+    @book = single_book
   end
 end
 
 class Borrower
-  attr_accessor :borrowed_books
+  attr_accessor :borrowed_books, :name
   def initialize(name)
     @name = name
     @borrowed_books = []
     puts "#{name} is the new borrower."
-  end
-
-  # def borrowed_books
-  #   @borrowed_books
-  # end
-
-  def name
-    @name
   end
 
   def borrowed_books_count
@@ -79,8 +69,8 @@ class Borrower
   end
 
   def borrowed_books_list
-    borrowed_books.each do |bk| 
-      puts "#{bk.title} is borrowed by #{name}"
+    borrowed_books.each do |single_book| 
+      puts "#{single_book.title} is borrowed by #{name}"
     end
   end
 end
