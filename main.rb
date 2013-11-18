@@ -85,3 +85,16 @@ library.available_books
 puts "-------------------------"
 
 
+puts "Begin my alterations."
+puts "__________________________________
+"
+
+emma = Borrower.new("Emma")
+emmas_book = Book.new("Pride and Prejudice", "Jane Austen",
+  "1813", "1st Edition")
+emma.rate_a_book(emmas_book, 5, "This book is a great\
+ Victorian Era romance and comedy! Pairs well with\
+ Freakanomics 'Jane Austen Game Theorist(podcast)'")
+
+
+
